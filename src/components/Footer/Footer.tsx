@@ -1,14 +1,9 @@
 import React from 'react';
 import styles from './Footer.module.css';
 
-interface FooterProps {
-    label: string;
-    onClick: () => void;
-}
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
     return (
-        <div className={styles.container}>
+        <div className={styles['footer-container']}>
         </div>
     );
 };

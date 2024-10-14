@@ -1,14 +1,13 @@
 import React from 'react';
 import styles from './Header.module.css';
 
-interface HeaderProps {
-    label: string;
-    onClick: () => void;
-}
+// components
+import SearchBar from '../SearchBar';
 
-const Header: React.FC<HeaderProps> = () => {
+const Header: React.FC = () => {
     return (
-        <div className={styles.container}>
+        <div className={styles['header-container']}>
+            <SearchBar />
         </div>
     );
 };

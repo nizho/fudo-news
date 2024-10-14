@@ -1,14 +1,16 @@
 import React from 'react';
 import styles from './SearchBar.module.css';
 
-interface SearchBarProps {
-    label: string;
-    onClick: () => void;
-}
-
-const SearchBar: React.FC<SearchBarProps> = () => {
+const SearchBar: React.FC = () => {
     return (
-        <div className={styles.container}>
+        <div className={styles['search-container']}>
+            <input
+                className={styles['search-input']}
+                placeholder='Search news'>
+            </input>
+            <button className={styles['search-button']}>
+                Search
+            </button>
         </div>
     );
 };
