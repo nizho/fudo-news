@@ -7,8 +7,9 @@ interface CardNewsProps {
     description: string;
     url: string;
     img: string;
+    author: string;
   }
-const CardNews: React.FC<CardNewsProps> = ({ title, description, url, img }) => {
+const CardNews: React.FC<CardNewsProps> = ({ title, description, url, img, author }) => {
     return (
         <div className={styles['card-container']}>
             <div className={styles['image-wrapper']}>
@@ -16,6 +17,9 @@ const CardNews: React.FC<CardNewsProps> = ({ title, description, url, img }) => 
                     className={styles['image']} 
                     src={img || imgNotAvailable}>
                 </img>
+            </div>
+            <div className={styles['card-author']}>
+                by: {author}
             </div>
             <div className={styles['card-title']}>
                 {title}

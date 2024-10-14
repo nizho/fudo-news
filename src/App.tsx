@@ -16,6 +16,7 @@ interface Article {
   description: string;
   url: string;
   urlToImage: string;
+  author: string
 }
 
 const NewsComponent: React.FC = () => {
@@ -52,6 +53,7 @@ const NewsComponent: React.FC = () => {
             description={article.description}
             url={article.url}
             img={article.urlToImage}
+            author={article.author}
           />
         ))}
       </div>
