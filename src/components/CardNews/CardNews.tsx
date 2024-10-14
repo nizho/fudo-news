@@ -1,9 +1,28 @@
 import React from 'react';
 import styles from './CardNews.module.css';
+import imgNotAvailable from './../../assets/no-image.jpeg'
 
-const CardNews: React.FC = () => {
+interface CardNewsProps {
+    title: string;
+    description: string;
+    url: string;
+    img: string;
+  }
+const CardNews: React.FC<CardNewsProps> = ({ title, description, url, img }) => {
     return (
         <div className={styles['card-container']}>
+            <div className={styles['image-wrapper']}>
+                <img 
+                    className={styles['image']} 
+                    src={img || imgNotAvailable}>
+                </img>
+            </div>
+            <div className={styles['card-title']}>
+                {title}
+            </div>
+            <div className={styles['card-description']}>
+                {description}
+            </div>
         </div>
     );
 };

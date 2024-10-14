@@ -8,9 +8,6 @@ const SearchBar: React.FC = () => {
                 className={styles['search-input']}
                 placeholder='Search news'>
             </input>
-            <button className={styles['search-button']}>
-                Search
-            </button>
         </div>
     );
 };

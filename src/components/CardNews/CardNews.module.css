@@ -1,2 +1,41 @@
-.container {
+.card-container {
+    height: 420px;
+    width: 320px;
+    border-radius: 12px;
+    margin-bottom: 48px;
+    overflow: hidden;
+    background-color: #121212;
+    padding-bottom: 16px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card-container:hover {
+    box-shadow: 0 0 15px rgba(184, 188, 191, 0.7);
+}
+
+.card-title {
+    color: #c2c7c9;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-description {
+    color: #c2c7c9;
+    padding: 16px;
+    font-size: 12px;
+    text-align: justify;
+}
+
+.image-wrapper {
+    width: 320px;
+    height: 160px;
+    overflow: hidden;
+    position: relative;
+}
+
+.image {
+    height: 100%;
+    width: 100%; 
+    object-fit: cover; 
 }

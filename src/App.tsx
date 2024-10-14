@@ -6,6 +6,7 @@ import { getNews } from './services/newsApi';
 import Spinner from './components/Spinner';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import CardNews from './components/CardNews';
 
 import styles from './App.module.css';
 
@@ -14,6 +15,7 @@ interface Article {
   title: string;
   description: string;
   url: string;
+  urlToImage: string;
 }
 
 const NewsComponent: React.FC = () => {
@@ -42,13 +44,17 @@ const NewsComponent: React.FC = () => {
   return (
     <div className={styles['main-container']}>
       <Header />
-      {articles.map((article, index) => (
-        <div key={index}>
-          <h2>{article.title}</h2>
-          <p>{article.description}</p>
-          <a href={article.url} target="_blank" rel="noopener noreferrer">Read more</a>
-        </div>
-      ))}
+      <div className={styles['content-section']}>
+        {articles.map((article, index) => (
+          <CardNews
+            key={index}
+            title={article.title}
+            description={article.description}
+            url={article.url}
+            img={article.urlToImage}
+          />
+        ))}
+      </div>
       <Footer />
     </div>
   );
