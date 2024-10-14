@@ -4,7 +4,7 @@ import styles from './Spinner.module.css';
 const Spinner: React.FC = () => {
     return (
         <div className={styles.container}>
-            Cargando noticias
+            <div className={styles.spinner}></div>
         </div>
     );
 };

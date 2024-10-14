@@ -6,6 +6,7 @@
     align-items: center;
     justify-content: center;
     height: 80px;
+    padding: 0 32px;
     background-color: white;
     background-color: hsl(218, 14%, 16%);
     margin-bottom: 24px;

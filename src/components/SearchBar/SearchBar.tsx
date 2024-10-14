@@ -1,15 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './SearchBar.module.css';
 
-const SearchBar: React.FC = () => {
-    return (
-        <div className={styles['search-container']}>
-            <input
-                className={styles['search-input']}
-                placeholder='Search news'>
-            </input>
-        </div>
-    );
+interface SearchBarProps {
+  onSearch: (query: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      onSearch(inputValue);
+    }
+  };
+
+  return (
+    <input
+      type="text"
+      className={styles['search-input']}
+      value={inputValue}
+      onChange={(e) => setInputValue(e.target.value)}
+      onKeyPress={handleKeyPress}
+      placeholder="Search news..."
+    />
+  );
 };
 
 export default SearchBar;

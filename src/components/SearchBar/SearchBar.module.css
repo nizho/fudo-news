@@ -4,7 +4,8 @@
 }
 
 .search-input {
-    min-width: 420px;
+    width: 420px;
+    max-width: 420px;
     padding: 4px 16px;
     border-radius: 6px;
     border: none;

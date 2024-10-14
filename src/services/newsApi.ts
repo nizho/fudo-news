@@ -17,3 +17,12 @@ export const getNews = async (endpoint: string, params = {}) => {
     throw error;
   }
 };
+
+export const searchNews = async (query: string) => {
+  const endpoint = 'everything';
+  const params = {
+    q: query,
+  };
+
+  return await getNews(endpoint, params);
+};

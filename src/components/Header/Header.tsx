@@ -1,15 +1,17 @@
 import React from 'react';
 import styles from './Header.module.css';
-
-// components
 import SearchBar from '../SearchBar';
 
-const Header: React.FC = () => {
-    return (
-        <div className={styles['header-container']}>
-            <SearchBar />
-        </div>
-    );
+interface HeaderProps {
+  onSearch: (query: string) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onSearch }) => {
+  return (
+    <div className={styles['header-container']}>
+      <SearchBar onSearch={onSearch} />
+    </div>
+  );
 };
 
 export default Header;
