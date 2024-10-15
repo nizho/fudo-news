@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NewsComponent from './App';
-import ArticleDetail from './components/Article'; 
+import ArticleDetail from './components/Article';
 
 const AppRouter: React.FC = () => {
   return (
-    <Router>
+    <Router basename="/fudo-news">
       <Routes>
-        <Route path="/fudo-news" element={<NewsComponent />} />
+        <Route path="/" element={<NewsComponent />} />
         <Route path="/article/:id" element={<ArticleDetail />} />
       </Routes>
     </Router>
