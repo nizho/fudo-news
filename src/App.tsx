@@ -33,6 +33,7 @@ const NewsComponent: React.FC = () => {
         setVisibleArticles(data.articles.slice(0, itemsToShow));
       } catch (err) {
         setError('Failed to fetch news');
+        console.log(err)
       } finally {
         setLoading(false);
       }
@@ -72,6 +73,7 @@ const NewsComponent: React.FC = () => {
       setItemsToShow(20); 
     } catch (err) {
       setError('Failed to fetch news');
+      console.log(err)
     } finally {
       setLoading(false);
     }

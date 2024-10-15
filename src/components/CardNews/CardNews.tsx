@@ -10,8 +10,12 @@ interface CardNewsProps {
     author: string;
   }
 const CardNews: React.FC<CardNewsProps> = ({ title, description, url, img, author }) => {
+    const handleClick = () => {
+        window.open(url, '_blank');
+      };
+
     return (
-        <div className={styles['card-container']}>
+        <div className={styles['card-container']} onClick={handleClick}>
             <div className={styles['image-wrapper']}>
                 <img 
                     className={styles['image']} 
