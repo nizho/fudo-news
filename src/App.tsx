@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import CardNews from './components/CardNews';
 import EmptyState from './components/EmptyState';
+import ErrorMsg from './components/ErrorMsg';
 
 import styles from './App.module.css';
 
@@ -22,7 +23,7 @@ const NewsComponent: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [visibleArticles, setVisibleArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<boolean | null>(null);
   const [itemsToShow, setItemsToShow] = useState(20); 
 
   useEffect(() => {
@@ -32,7 +33,7 @@ const NewsComponent: React.FC = () => {
         setArticles(data.articles);
         setVisibleArticles(data.articles.slice(0, itemsToShow));
       } catch (err) {
-        setError('Failed to fetch news');
+        setError(true);
         console.log(err)
       } finally {
         setLoading(false);
@@ -64,7 +65,7 @@ const NewsComponent: React.FC = () => {
     const filteredQuery = query.replace(/[<>{}[\]/\\;:'"()-]+/g, '');
     
     setLoading(true);
-    setError(null);
+    setError(false);
     
     try {
       const data = await searchNews(filteredQuery); 
@@ -72,7 +73,7 @@ const NewsComponent: React.FC = () => {
       setVisibleArticles(data.articles.slice(0, itemsToShow));
       setItemsToShow(20); 
     } catch (err) {
-      setError('Failed to fetch news');
+      setError(true);
       console.log(err)
     } finally {
       setLoading(false);
@@ -80,7 +81,7 @@ const NewsComponent: React.FC = () => {
   };
 
   if (loading) return <Spinner />;
-  if (error) return <p>{error}</p>;
+  if (error) return <ErrorMsg/>
 
   return (
     <div className={styles['main-container']}>
