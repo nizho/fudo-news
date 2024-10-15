@@ -5,7 +5,7 @@ import iconWhatsapp from './../../assets/whatsApp.svg';
 
 const Footer: React.FC = () => {
     const linkedinUrl = 'https://www.linkedin.com/in/diegorodolfomartinez/';
-    const whatsappNumber = '+541160455192'; 
+    const whatsappNumber = import.meta.env.VITE_MOBILE_NUMBER; 
     const whatsappMessage = 'Hi Diego! We are reviewing your challenge now, good luck!';
 
     return (
