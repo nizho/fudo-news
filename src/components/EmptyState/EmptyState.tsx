@@ -4,8 +4,8 @@ import styles from './EmptyState.module.css'; // Crea un archivo de estilos si e
 const EmptyState: React.FC = () => {
   return (
     <div className={styles['empty-state']}>
-      <h2>No hay artículos disponibles</h2>
-      <p>Prueba a realizar una búsqueda diferente o vuelve más tarde.</p>
+      <h2>No items available</h2>
+      <p>Try a different search or come back later</p>
     </div>
   );
 };

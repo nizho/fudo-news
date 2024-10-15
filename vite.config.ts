@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3000,
     host: 'localhost',
   },
-  base: '/fudo-news/',
+  base: '/fudo-news',
 })
 
 

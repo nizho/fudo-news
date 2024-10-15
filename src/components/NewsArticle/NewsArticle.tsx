@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import styles from './Article.module.css';
+import styles from './NewsArticle.module.css';
 
-const Article: React.FC = () => {
+const NewsArticle: React.FC = () => {
   const { id } = useParams<{ id: string }>();
 
   return (
@@ -13,4 +13,4 @@ const Article: React.FC = () => {
   );
 };
 
-export default Article;
+export default NewsArticle;
