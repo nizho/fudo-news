@@ -25,10 +25,16 @@ git clone https://github.com/tu-usuario/nombre-del-repo.git
    ```
 
 2. **Navegar al directorio del proyecto:**
+
+   ```bash
    cd nombre-del-repo
+   ```
 
 3. **Instalar las dependencias:**
+
+   ```bash
    npm install
+   ```
 
 4. **Configurar las variables de entorno:**
 
@@ -39,6 +45,8 @@ git clone https://github.com/tu-usuario/nombre-del-repo.git
 
 Para iniciar la aplicación, ejecutar el siguiente comando:
 
-npm run dev
+```bash
+   npm run dev
+```
 
-Esto abrirá la aplicación en tu navegador predeterminado en `http://localhost:3000/fudo-news`.
+Esto abrirá la aplicación en tu navegador
