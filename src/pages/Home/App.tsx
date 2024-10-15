@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { getNews, searchNews } from './services/newsApi';
+import { getNews, searchNews } from '../../services/newsApi';
 
 //components
-import Spinner from './components/Spinner';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import CardNews from './components/CardNews';
-import EmptyState from './components/EmptyState';
-import ErrorMsg from './components/ErrorMsg';
+import Spinner from '../../components/Spinner';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+import CardNews from '../../components/CardNews';
+import EmptyState from '../../components/EmptyState';
+import ErrorMsg from '../../components/ErrorMsg';
 
 import styles from './App.module.css';
 
@@ -21,7 +21,6 @@ interface Article {
 
 const NewsComponent: React.FC = () => {
   const [articles, setArticles] = useState<Article[]>([]);
-  const [visibleArticles, setVisibleArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<boolean | null>(null);
   const [itemsToShow, setItemsToShow] = useState(20); 
@@ -31,7 +30,6 @@ const NewsComponent: React.FC = () => {
       try {
         const data = await getNews('top-headlines', { country: 'us' });
         setArticles(data.articles);
-        setVisibleArticles(data.articles.slice(0, itemsToShow));
       } catch (err) {
         setError(true);
         console.log(err)
@@ -57,10 +55,6 @@ const NewsComponent: React.FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    setVisibleArticles(articles.slice(0, itemsToShow));
-  }, [itemsToShow, articles]);
-
   const handleSearch = async (query: string) => {
     const filteredQuery = query.replace(/[<>{}[\]/\\;:'"()-]+/g, '');
     
@@ -70,7 +64,6 @@ const NewsComponent: React.FC = () => {
     try {
       const data = await searchNews(filteredQuery); 
       setArticles(data.articles);
-      setVisibleArticles(data.articles.slice(0, itemsToShow));
       setItemsToShow(20); 
     } catch (err) {
       setError(true);
@@ -79,6 +72,8 @@ const NewsComponent: React.FC = () => {
       setLoading(false);
     }
   };
+
+  const visibleArticles = articles.slice(0, itemsToShow);
 
   if (loading) return <Spinner />;
   if (error) return <ErrorMsg/>

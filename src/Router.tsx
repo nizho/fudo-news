@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NewsComponent from './App';
-import NewsArticleDetail from './components/NewsArticle';
+import NewsComponent from './pages/Home/App';
+import NewsArticleDetail from './pages/NewsArticle';
 
 const AppRouter: React.FC = () => {
   return (
