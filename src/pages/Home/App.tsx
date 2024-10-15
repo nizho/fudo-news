@@ -62,7 +62,7 @@ const NewsComponent: React.FC = () => {
     setError(false);
     
     try {
-      const data = await searchNews(filteredQuery); 
+      const data = await searchNews('everything',filteredQuery); 
       setArticles(data.articles);
       setItemsToShow(20); 
     } catch (err) {
