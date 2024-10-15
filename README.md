@@ -1,50 +1,25 @@
-# React + TypeScript + Vite
+# Fudo Technical Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este es un challenge técnico para Fudo, desarrollado en React. La aplicación consume la API de NewsAPI para mostrar noticias.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Lazy Loading**: La aplicación carga más artículos a medida que el usuario se desplaza hacia abajo.
+- **Búsqueda**: Permite buscar artículos específicos usando la barra de búsqueda.
+- **Render de noticias**: No se muestran las noticias que falta titulo, autor o descripcion, solo se contempla que no haya imagen y se la reemplaza por una dummy.
 
-## Expanding the ESLint configuration
+## Requisitos
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- [Node.js](https://nodejs.org/) (versión 14 o superior)
+- [npm](https://www.npmjs.com/get-npm) (normalmente se instala junto con Node.js)
 
-- Configure the top-level `parserOptions` property like this:
+## Instalación
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+git clone https://github.com/tu-usuario/nombre-del-repo.git
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. **Clona el repositorio:**
+   ```bash
+   git clone https://github.com/nizho/fudo-news.git
+   ```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Esto abrirá la aplicación en tu navegador predeterminado en `http://localhost:3000`.

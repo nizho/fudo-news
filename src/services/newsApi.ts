@@ -18,11 +18,17 @@ export const getNews = async (endpoint: string, params = {}) => {
   }
 };
 
-export const searchNews = async (query: string) => {
-  const endpoint = 'everything';
-  const params = {
-    q: query,
-  };
-
-  return await getNews(endpoint, params);
+export const searchNews = async (query: string, params = {}) => {
+  try {
+    const response = await api.get('everything', {
+      params: {
+        q: query,
+        ...params,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching news', error);
+    throw error;
+  }
 };
