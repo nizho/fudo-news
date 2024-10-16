@@ -2,6 +2,8 @@
 
 Este es un challenge técnico para Fudo, desarrollado en React. La aplicación consume la API de NewsAPI para mostrar noticias.
 
+Se puede encontra la version online en https://nizho.github.io/fudo-news/
+
 ## Características
 
 - **Lazy Loading**: La aplicación carga más artículos a medida que el usuario se desplaza hacia abajo.
@@ -15,35 +17,36 @@ Este es un challenge técnico para Fudo, desarrollado en React. La aplicación c
 - [Node.js](https://nodejs.org/) (versión 18 o superior)
 - [npm](https://www.npmjs.com/get-npm) (normalmente se instala junto con Node.js)
 
-## Instalación
 
-1. **Clonar el repositorio:**
-
-   ```bash
-   git clone https://github.com/nizho/fudo-news.git
-   ```
-
-2. **Navegar al directorio del proyecto:**
+## Instalación 
 
    ```bash
-   cd nombre-del-repo
+   # Clonar el repositorio en la carpeta definida
+   git clone https://github.com/nizho/fudo-news.git fudo-news
+   # moverse a la carpeta
+   cd fudo-news
+   # generar imagen de docker
+   docker build . --tag fudo-news
    ```
 
-3. **Instalar las dependencias:**
+```bash
+   #Para garantizar la correcta creacion de la imagen en el paso anterior, correr este paso por separado
+   # levantar la imagen
+   docker run --publish 80:80 fudo-news
+   ```
+
+
+
+   ## Consideraciones
+
+   Si se desea correr el proyecto sin docker, se debe realizar la instalacion de dependencias y solicitar la configuracion para el archivo .env
 
    ```bash
    npm install
    ```
 
-4. **Configurar las variables de entorno:**
+   Levantar el proyecto con:
 
-- Solicitar el archivo `.env` que contiene las variables privadas necesarias para la aplicación.
-- Asegurar de que el archivo `.env` esté en la raíz del proyecto.
-
-## Uso
-
-Para iniciar la aplicación, ejecutar el siguiente comando:
-
-```bash
+   ```bash
    npm run dev
-```
+   ```
