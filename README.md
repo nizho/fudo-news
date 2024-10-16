@@ -36,8 +36,7 @@ Se puede encontra la version online en https://nizho.github.io/fudo-news/
    ```
 
 
-
-   ## Consideraciones
+## Consideraciones
 
    Si se desea correr el proyecto sin docker, se debe realizar la instalacion de dependencias y solicitar la configuracion para el archivo .env
 
