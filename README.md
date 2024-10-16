@@ -8,6 +8,7 @@ Este es un challenge técnico para Fudo, desarrollado en React. La aplicación c
 - **Búsqueda**: Permite buscar artículos específicos usando la barra de búsqueda, se filtran caracteres potencialmente maliciosos.
 - **Render de noticias**: No se muestran las noticias que falta titulo, autor o descripcion, solo se contempla que no haya imagen y se la reemplaza por una dummy. El feed se puede visualizar en mobile o web
 - **Errores**: Se puede realizar una busqueda vacia para forzar el manejo de errores
+- **BFF**: Esta separado de la logica que comunica con la api de NewsApi, se debe instanciar este servicio que se encuentra en https://github.com/nizho/fudo-news-bff
 
 ## Requisitos
 
@@ -15,8 +16,6 @@ Este es un challenge técnico para Fudo, desarrollado en React. La aplicación c
 - [npm](https://www.npmjs.com/get-npm) (normalmente se instala junto con Node.js)
 
 ## Instalación
-
-git clone https://github.com/tu-usuario/nombre-del-repo.git
 
 1. **Clonar el repositorio:**
 
@@ -48,5 +47,3 @@ Para iniciar la aplicación, ejecutar el siguiente comando:
 ```bash
    npm run dev
 ```
-
-Esto abrirá la aplicación en tu navegador
